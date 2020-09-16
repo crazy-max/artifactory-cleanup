@@ -1,0 +1,28 @@
+artifactory:
+  url: https://artifactory.example.com
+  apiKey: 01234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ
+
+policies:
+  -
+    name: policy_docker
+    repos:
+      - docker-me-local
+    schedule: "*/30 * * * *"
+    retention: 720h
+    docker:
+      exclude:
+        - "latest"
+  -
+    name: policy_misc
+    repos:
+      - rpm-prod-local
+      - rpm-local
+      - generic-local
+    schedule: "*/30 * * * * *"
+    retention: 24h
+    generic:
+      include:
+        - "prod/*"
+      exclude:
+        - "*2.2.*"
+        - "*2.1.0*"

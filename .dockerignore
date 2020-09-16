@@ -1,0 +1,15 @@
+/.idea
+/*.iml
+
+/.dev
+/.git
+/.github
+/bin
+/dist
+/docs
+/.editorconfig
+/.gitignore
+/.goreleaser.yml
+/CHANGELOG.md
+/LICENSE
+/README.md
