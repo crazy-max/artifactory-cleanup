@@ -43,7 +43,7 @@ func (j *Job) Run() {
 			j.Cron.Entry(j.ID).Next)
 	}
 
-	j.Log.Info().Msg("Cron triggered")
+	j.Log.Info().Msg("Job triggered")
 	for _, repo := range j.Policy.Repos {
 		repoCfg, err := j.Atf.RepoConfiguration(repo)
 		if err != nil {

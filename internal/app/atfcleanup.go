@@ -7,6 +7,7 @@ import (
 	"github.com/crazy-max/artifactory-cleanup/internal/job"
 	"github.com/crazy-max/artifactory-cleanup/pkg/artifactory"
 	"github.com/crazy-max/artifactory-cleanup/pkg/utl"
+	"github.com/pkg/errors"
 	"github.com/robfig/cron/v3"
 	"github.com/rs/zerolog/log"
 )
@@ -46,9 +47,7 @@ func New(cfg *config.Config, location *time.Location) (*AtfCleanup, error) {
 }
 
 // Start starts Artifactory cleanup
-func (ac *AtfCleanup) Start() error {
-	var err error
-
+func (ac *AtfCleanup) Start() (err error) {
 	for _, policy := range ac.cfg.Policies {
 		tjob := &job.Job{
 			DryRun: ac.cfg.Cli.DryRun,
@@ -58,13 +57,21 @@ func (ac *AtfCleanup) Start() error {
 			Log:    log.With().Str("policy", policy.Name).Logger(),
 		}
 
-		tjob.ID, err = ac.cron.AddJob(policy.Schedule, tjob)
-		if err != nil {
-			tjob.Log.Error().Err(err).Msg("Cannot create job")
+		if ac.cfg.Cli.DisableSchedule {
+			tjob.Run()
 			continue
 		}
 
+		tjob.ID, err = ac.cron.AddJob(policy.Schedule, tjob)
+		if err != nil {
+			return errors.Wrap(err, "Cannot create job")
+		}
+
 		tjob.Log.Info().Msgf("Cron initialized with schedule %s", policy.Schedule)
+	}
+
+	if ac.cfg.Cli.DisableSchedule {
+		return
 	}
 
 	ac.cron.Start()

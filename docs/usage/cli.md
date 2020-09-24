@@ -25,6 +25,8 @@ Flags:
       --log-caller          Add file:line of the caller to log output
                             ($LOG_CALLER).
       --dry-run             If enabled files will not be removed ($DRY_RUN).
+      --disable-schedule    Disable scheduling and execute policies right away
+                            ($DISABLE_SCHEDULE).
 ```
 
 ## Environment variables
@@ -39,3 +41,4 @@ Following environment variables can be used in place:
 | `LOG_JSON`         | `false`       | Enable JSON logging output |
 | `LOG_CALLER`       | `false`       | Enable to add `file:line` of the caller |
 | `DRY_RUN`          | `false`       | If enabled files will not be removed |
+| `DISABLE_SCHEDULE` | `false`       | Disable scheduling and execute policies right away |
