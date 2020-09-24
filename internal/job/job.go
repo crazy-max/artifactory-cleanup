@@ -61,7 +61,7 @@ func (j *Job) Run() {
 		case "docker":
 			res = j.cleanupDockerRepo(repoCfg)
 		default:
-			res = j.cleanupGenericRepo(repoCfg)
+			res = j.cleanupCommonRepo(repoCfg)
 		}
 
 		if res != nil {

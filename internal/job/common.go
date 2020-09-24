@@ -11,7 +11,7 @@ import (
 	"github.com/jfrog/jfrog-client-go/artifactory/services/utils"
 )
 
-func (j *Job) cleanupGenericRepo(config artifactory.RepoConfiguration) *CleanupResult {
+func (j *Job) cleanupCommonRepo(config artifactory.RepoConfiguration) *CleanupResult {
 	var files []artifactory.AQLResult
 	sublog := j.Log.With().Bool("dry_run", j.DryRun).Str("repo", config.Key).Logger()
 
@@ -20,10 +20,10 @@ func (j *Job) cleanupGenericRepo(config artifactory.RepoConfiguration) *CleanupR
 		ItemsRemoved: 0,
 	}
 
-	for _, include := range j.Policy.Generic.Include {
+	for _, include := range j.Policy.Common.Include {
 		aqlQuery, err := utils.CreateAqlBodyForSpecWithPattern(&utils.ArtifactoryCommonParams{
 			Pattern:     fmt.Sprintf("%s/%s", config.Key, strings.TrimLeft(include, "/")),
-			Exclusions:  j.Policy.Generic.Exclude,
+			Exclusions:  j.Policy.Common.Exclude,
 			Offset:      0,
 			Limit:       0,
 			Recursive:   true,

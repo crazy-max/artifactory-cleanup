@@ -53,7 +53,7 @@ func TestLoadFile(t *testing.T) {
 						Retention:      utl.NewDuration(720 * time.Hour),
 						LastModified:   utl.NewTrue(),
 						LastDownloaded: utl.NewTrue(),
-						Generic:        (&PolicyGeneric{}).GetDefaults(),
+						Common:         (&PolicyCommon{}).GetDefaults(),
 						Docker: &PolicyDocker{
 							KeepSemver: utl.NewTrue(),
 							Exclude: []string{
@@ -72,7 +72,7 @@ func TestLoadFile(t *testing.T) {
 						Retention:      utl.NewDuration(24 * time.Hour),
 						LastModified:   utl.NewTrue(),
 						LastDownloaded: utl.NewTrue(),
-						Generic: &PolicyGeneric{
+						Common: &PolicyCommon{
 							Include: []string{
 								"prod/*",
 							},

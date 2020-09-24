@@ -17,7 +17,7 @@ type Policy struct {
 	Retention      *time.Duration `yaml:"retention,omitempty" json:"retention,omitempty" validate:"required"`
 	LastModified   *bool          `yaml:"lastModified,omitempty" json:"lastModified,omitempty" validate:"required"`
 	LastDownloaded *bool          `yaml:"lastDownloaded,omitempty" json:"lastDownloaded,omitempty" validate:"required"`
-	Generic        *PolicyGeneric `yaml:"generic,omitempty" json:"generic,omitempty"`
+	Common         *PolicyCommon  `yaml:"common,omitempty" json:"common,omitempty"`
 	Docker         *PolicyDocker  `yaml:"docker,omitempty" json:"docker,omitempty"`
 }
 
@@ -32,6 +32,6 @@ func (s *Policy) GetDefaults() *Policy {
 func (s *Policy) SetDefaults() {
 	s.LastModified = utl.NewTrue()
 	s.LastDownloaded = utl.NewTrue()
-	s.Generic = (&PolicyGeneric{}).GetDefaults()
+	s.Common = (&PolicyCommon{}).GetDefaults()
 	s.Docker = (&PolicyDocker{}).GetDefaults()
 }

@@ -20,7 +20,7 @@ policies:
       - generic-local
     schedule: "*/30 * * * * *"
     retention: 24h
-    generic:
+    common:
       include:
         - "prod/*"
       exclude:

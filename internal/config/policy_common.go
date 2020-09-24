@@ -1,19 +1,19 @@
 package config
 
-// PolicyGeneric holds generic's policy configuration
-type PolicyGeneric struct {
+// PolicyCommon holds common's policy configuration
+type PolicyCommon struct {
 	Include []string `yaml:"include,omitempty" json:"include,omitempty"`
 	Exclude []string `yaml:"exclude,omitempty" json:"exclude,omitempty"`
 }
 
 // GetDefaults gets the default values
-func (s *PolicyGeneric) GetDefaults() *PolicyGeneric {
-	n := &PolicyGeneric{}
+func (s *PolicyCommon) GetDefaults() *PolicyCommon {
+	n := &PolicyCommon{}
 	n.SetDefaults()
 	return n
 }
 
 // SetDefaults sets the default values
-func (s *PolicyGeneric) SetDefaults() {
+func (s *PolicyCommon) SetDefaults() {
 	s.Include = []string{""}
 }
