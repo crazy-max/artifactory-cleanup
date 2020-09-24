@@ -41,7 +41,7 @@ LABEL maintainer="CrazyMax" \
   org.opencontainers.image.revision=$VCS_REF \
   org.opencontainers.image.vendor="CrazyMax" \
   org.opencontainers.image.title="Artifactory Cleanup" \
-  org.opencontainers.image.description="Perform artifacts cleanup operations with advanced settings on JFrog Artifactory" \
+  org.opencontainers.image.description="Cleanup artifacts on Jfrog Artifactory with advanced settings" \
   org.opencontainers.image.licenses="MIT"
 
 RUN apk --update --no-cache add \
