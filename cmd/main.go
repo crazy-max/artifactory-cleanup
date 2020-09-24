@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"io"
 	"os"
 	"os/signal"
 	"runtime"
@@ -13,7 +12,7 @@ import (
 	"github.com/alecthomas/kong"
 	"github.com/crazy-max/artifactory-cleanup/internal/app"
 	"github.com/crazy-max/artifactory-cleanup/internal/config"
-	"github.com/rs/zerolog"
+	"github.com/crazy-max/artifactory-cleanup/internal/logging"
 	"github.com/rs/zerolog/log"
 )
 
@@ -58,36 +57,8 @@ func main() {
 		log.Panic().Err(err).Msgf("Cannot load timezone %s", cli.Timezone)
 	}
 
-	// Logging
-	var logw io.Writer
-
-	zerolog.TimestampFunc = func() time.Time {
-		return time.Now().In(location)
-	}
-
-	if !cli.LogJSON {
-		logw = zerolog.New(zerolog.ConsoleWriter{
-			Out:        os.Stdout,
-			TimeFormat: time.RFC1123,
-		}).With().Timestamp().Logger()
-	} else {
-		logw = os.Stdout
-	}
-
-	ctx := zerolog.New(logw).With().Timestamp()
-	if cli.LogCaller {
-		ctx = ctx.Caller()
-	}
-	log.Logger = ctx.Logger()
-
-	logLevel, err := zerolog.ParseLevel(cli.LogLevel)
-	if err != nil {
-		log.Fatal().Err(err).Msgf("Unknown log level")
-	} else {
-		zerolog.SetGlobalLevel(logLevel)
-	}
-
 	// Init
+	logging.Configure(&cli, location)
 	log.Info().Str("version", version).Msgf("Starting %s", meta.Name)
 	if cli.DryRun {
 		log.Warn().Msg("Dry run enabled")
