@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.3.1 (2020/09/24)
+
+* Fix logger
+
 ## 0.3.0 (2020/09/24)
 
 * Allow to disable scheduling to execute policies right away
