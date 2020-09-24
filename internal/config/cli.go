@@ -6,11 +6,11 @@ import (
 
 // Cli holds command line args, flags and cmds
 type Cli struct {
-	Version    kong.VersionFlag
-	Cfgfile    string `kong:"name='config',env='CONFIG',help='Configuration file.'"`
-	Timezone   string `kong:"name='timezone',default='UTC',help='Timezone.'"`
-	LogLevel   string `kong:"name='log-level',default='info',help='Set log level.'"`
-	LogJSON    bool   `kong:"name='log-json',default='false',help='Enable JSON logging output.'"`
-	LogNoColor bool   `kong:"name='log-no-color',default='false',help='Disable coloring output.'"`
-	DryRun     bool   `kong:"name='dry-run',help='If enabled, images will not be removed.'"`
+	Version   kong.VersionFlag
+	Cfgfile   string `kong:"name='config',env='CONFIG',help='Configuration file.'"`
+	Timezone  string `kong:"name='timezone',env='TZ',default='UTC',help='Timezone.'"`
+	LogLevel  string `kong:"name='log-level',env='LOG_LEVEL',default='info',help='Set log level.'"`
+	LogJSON   bool   `kong:"name='log-json',env='LOG_JSON',default='false',help='Enable JSON logging output.'"`
+	LogCaller bool   `kong:"name='log-caller',env='LOG_CALLER',default='false',help='Add file:line of the caller to log output.'"`
+	DryRun    bool   `kong:"name='dry-run',env='DRY_RUN',help='If enabled files will not be removed.'"`
 }

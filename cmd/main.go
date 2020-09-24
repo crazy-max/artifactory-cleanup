@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"io"
 	"os"
 	"os/signal"
 	"runtime"
@@ -24,7 +25,7 @@ var (
 	meta    = config.Meta{
 		ID:     "artifactory-cleanup",
 		Name:   "Artifactory Cleanup",
-		Desc:   "Easily cleanup artifacts from Artifacrory",
+		Desc:   "Cleanup artifacts on Jfrog Artifactory with advanced settings",
 		URL:    "https://github.com/crazy-max/artifactory-cleanup",
 		Logo:   "https://raw.githubusercontent.com/crazy-max/artifactory-cleanup/master/.github/artifactory-cleanup.png",
 		Author: "CrazyMax",
@@ -58,15 +59,26 @@ func main() {
 	}
 
 	// Logging
+	var logw io.Writer
+
 	zerolog.TimestampFunc = func() time.Time {
 		return time.Now().In(location)
 	}
 
-	log.Logger = zerolog.New(zerolog.ConsoleWriter{
-		Out:        os.Stdout,
-		TimeFormat: time.RFC1123,
-		NoColor:    cli.LogNoColor,
-	}).With().Timestamp().Logger()
+	if !cli.LogJSON {
+		logw = zerolog.New(zerolog.ConsoleWriter{
+			Out:        os.Stdout,
+			TimeFormat: time.RFC1123,
+		}).With().Timestamp().Logger()
+	} else {
+		logw = os.Stdout
+	}
+
+	ctx := zerolog.New(logw).With().Timestamp()
+	if cli.LogCaller {
+		ctx = ctx.Caller()
+	}
+	log.Logger = ctx.Logger()
 
 	logLevel, err := zerolog.ParseLevel(cli.LogLevel)
 	if err != nil {
