@@ -7,6 +7,7 @@ require (
 	github.com/alecthomas/kong v0.2.11
 	github.com/crazy-max/gonfig v0.3.0
 	github.com/docker/go-units v0.4.0
+	github.com/dsnet/compress v0.0.1 // indirect
 	github.com/go-playground/validator/v10 v10.3.0
 	github.com/go-resty/resty/v2 v2.3.0
 	github.com/hako/durafmt v0.0.0-20200710122514-c0fb7b4da026
@@ -15,4 +16,5 @@ require (
 	github.com/robfig/cron/v3 v3.0.1
 	github.com/rs/zerolog v1.20.0
 	github.com/stretchr/testify v1.6.1
+	github.com/ulikunitz/xz v0.5.8 // indirect
 )
