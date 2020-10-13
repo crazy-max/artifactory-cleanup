@@ -106,7 +106,7 @@ Use last modified time of an artifact as `retention` duration. (default `true`)
 !!! abstract "Environment variables"
     * `ATFCLNP_POLICIES_<KEY>_LASTMODIFIED`
 
-### `lastModified`
+### `lastDownloaded`
 
 Use last downloaded time of an artifact as `retention` duration. (default `true`)
 
