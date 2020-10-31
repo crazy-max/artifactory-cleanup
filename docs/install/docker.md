@@ -2,7 +2,13 @@
 
 ## About
 
-Artifactory Cleanup provides automatically updated Docker :whale: images within [Docker Hub](https://hub.docker.com/r/crazymax/artifactory-cleanup).
+Artifactory Cleanup provides automatically updated Docker :whale: images within several registries:
+
+| Registry                                                                                         | Image                           |
+|--------------------------------------------------------------------------------------------------|---------------------------------|
+| [Docker Hub](https://hub.docker.com/r/crazymax/artifactory-cleanup/)                             | `crazymax/artifactory-cleanup`                 |
+| [GitHub Container Registry](https://github.com/users/crazy-max/packages/container/package/artifactory-cleanup)  | `ghcr.io/crazy-max/artifactory-cleanup`        |
+
 It is possible to always use the latest stable tag or to use another service that handles updating Docker images.
 
 !!! note
