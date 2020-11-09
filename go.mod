@@ -5,7 +5,7 @@ go 1.15
 require (
 	github.com/Masterminds/semver/v3 v3.1.0
 	github.com/alecthomas/kong v0.2.11
-	github.com/crazy-max/gonfig v0.3.0
+	github.com/crazy-max/gonfig v0.4.0
 	github.com/docker/go-units v0.4.0
 	github.com/go-playground/validator/v10 v10.4.1
 	github.com/go-resty/resty/v2 v2.3.0
