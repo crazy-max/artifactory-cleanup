@@ -30,7 +30,7 @@ RUN apk --update --no-cache add \
     libressl \
   && rm -rf /tmp/* /var/cache/apk/*
 
-COPY --from=builder /opt/artifactory-cleanup /usr/local/bin/artifactory-cleanup
+COPY --from=build /opt/artifactory-cleanup /usr/local/bin/artifactory-cleanup
 RUN artifactory-cleanup --version
 
 ENTRYPOINT [ "artifactory-cleanup" ]
