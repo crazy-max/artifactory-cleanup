@@ -19,8 +19,9 @@ RestartSec=2s
 Type=simple
 User=artifactory-cleanup
 Group=artifactory-cleanup
-ExecStart=/usr/local/bin/artifactory-cleanup --config /etc/artifactory-cleanup/artifactory-cleanup.yml --log-level info
+ExecStart=/usr/local/bin/artifactory-cleanup --config /etc/artifactory-cleanup/artifactory-cleanup.yml
 Restart=always
+#Environment=TZ=Europe/Paris
 
 [Install]
 WantedBy=multi-user.target

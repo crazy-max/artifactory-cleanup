@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.0.0 (2020/11/16)
+
+* Use embedded tzdata package
+* Remove `--timezone` flag
+* Docker image also available on [GitHub Container Registry](https://github.com/users/crazy-max/packages/container/package/ddns-route53)
+* Switch to Docker actions
+* Update deps
+
 ## 0.3.1 (2020/09/24)
 
 * Fix logger

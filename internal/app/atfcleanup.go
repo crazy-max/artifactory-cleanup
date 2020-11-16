@@ -1,8 +1,6 @@
 package app
 
 import (
-	"time"
-
 	"github.com/crazy-max/artifactory-cleanup/internal/config"
 	"github.com/crazy-max/artifactory-cleanup/internal/job"
 	"github.com/crazy-max/artifactory-cleanup/pkg/artifactory"
@@ -20,7 +18,7 @@ type AtfCleanup struct {
 }
 
 // New creates a new Artifactory cleanup instance
-func New(cfg *config.Config, location *time.Location) (*AtfCleanup, error) {
+func New(cfg *config.Config) (*AtfCleanup, error) {
 	apiKey, err := utl.GetSecret(cfg.Artifactory.ApiKey, cfg.Artifactory.ApiKeyFile)
 	if err != nil {
 		log.Warn().Err(err).Msg("Cannot retrieve API key secret")
@@ -39,10 +37,9 @@ func New(cfg *config.Config, location *time.Location) (*AtfCleanup, error) {
 	return &AtfCleanup{
 		cfg: cfg,
 		atf: atf,
-		cron: cron.New(
-			cron.WithLocation(location),
-			cron.WithParser(cron.NewParser(cron.SecondOptional|cron.Minute|cron.Hour|cron.Dom|cron.Month|cron.Dow|cron.Descriptor)),
-		),
+		cron: cron.New(cron.WithParser(cron.NewParser(
+			cron.SecondOptional | cron.Minute | cron.Hour | cron.Dom | cron.Month | cron.Dow | cron.Descriptor,
+		))),
 	}, nil
 }
 

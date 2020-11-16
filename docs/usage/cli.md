@@ -19,7 +19,6 @@ Flags:
   -h, --help                Show context-sensitive help.
       --version
       --config=STRING       Configuration file ($CONFIG).
-      --timezone="UTC"      Timezone ($TZ).
       --log-level="info"    Set log level ($LOG_LEVEL).
       --log-json            Enable JSON logging output ($LOG_JSON).
       --log-caller          Add file:line of the caller to log output
@@ -36,7 +35,6 @@ Following environment variables can be used in place:
 | Name               | Default       | Description   |
 |--------------------|---------------|---------------|
 | `CONFIG`           |               | Configuration file |
-| `TZ`               | `UTC`         | Timezone |
 | `LOG_LEVEL`        | `info`        | Log level output |
 | `LOG_JSON`         | `false`       | Enable JSON logging output |
 | `LOG_CALLER`       | `false`       | Enable to add `file:line` of the caller |
