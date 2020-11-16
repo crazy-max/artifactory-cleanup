@@ -4,7 +4,7 @@
 
 * Use embedded tzdata package
 * Remove `--timezone` flag
-* Docker image also available on [GitHub Container Registry](https://github.com/users/crazy-max/packages/container/package/ddns-route53)
+* Docker image also available on [GitHub Container Registry](https://github.com/users/crazy-max/packages/container/package/artifactory-cleanup)
 * Switch to Docker actions
 * Update deps
 
