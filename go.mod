@@ -3,7 +3,7 @@ module github.com/crazy-max/artifactory-cleanup
 go 1.15
 
 require (
-	github.com/Masterminds/semver/v3 v3.1.0
+	github.com/Masterminds/semver/v3 v3.1.1
 	github.com/alecthomas/kong v0.2.11
 	github.com/crazy-max/gonfig v0.4.0
 	github.com/docker/go-units v0.4.0
