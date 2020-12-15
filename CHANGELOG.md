@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.1 (2020/12/15)
+
+* Use `tag-semver`
+* Bump github.com/alecthomas/kong from 0.2.11 to 0.2.12 (#34)
+
 ## 1.0.0 (2020/11/16)
 
 * Use embedded tzdata package
