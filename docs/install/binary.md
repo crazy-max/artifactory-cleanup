@@ -10,9 +10,12 @@ Choose the archive matching the destination platform:
 * [`artifactory-cleanup_{{ git.tag | trim('v') }}_freebsd_i386.tar.gz`]({{ config.repo_url }}/releases/download/v{{ git.tag | trim('v') }}/artifactory-cleanup_{{ git.tag | trim('v') }}_freebsd_i386.tar.gz)
 * [`artifactory-cleanup_{{ git.tag | trim('v') }}_freebsd_x86_64.tar.gz`]({{ config.repo_url }}/releases/download/v{{ git.tag | trim('v') }}/artifactory-cleanup_{{ git.tag | trim('v') }}_freebsd_x86_64.tar.gz)
 * [`artifactory-cleanup_{{ git.tag | trim('v') }}_linux_arm64.tar.gz`]({{ config.repo_url }}/releases/download/v{{ git.tag | trim('v') }}/artifactory-cleanup_{{ git.tag | trim('v') }}_linux_arm64.tar.gz)
+* [`artifactory-cleanup_{{ git.tag | trim('v') }}_linux_armv5.tar.gz`]({{ config.repo_url }}/releases/download/v{{ git.tag | trim('v') }}/artifactory-cleanup_{{ git.tag | trim('v') }}_linux_armv5.tar.gz)
 * [`artifactory-cleanup_{{ git.tag | trim('v') }}_linux_armv6.tar.gz`]({{ config.repo_url }}/releases/download/v{{ git.tag | trim('v') }}/artifactory-cleanup_{{ git.tag | trim('v') }}_linux_armv6.tar.gz)
 * [`artifactory-cleanup_{{ git.tag | trim('v') }}_linux_armv7.tar.gz`]({{ config.repo_url }}/releases/download/v{{ git.tag | trim('v') }}/artifactory-cleanup_{{ git.tag | trim('v') }}_linux_armv7.tar.gz)
 * [`artifactory-cleanup_{{ git.tag | trim('v') }}_linux_i386.tar.gz`]({{ config.repo_url }}/releases/download/v{{ git.tag | trim('v') }}/artifactory-cleanup_{{ git.tag | trim('v') }}_linux_i386.tar.gz)
+* [`artifactory-cleanup_{{ git.tag | trim('v') }}_linux_ppc64le.tar.gz`]({{ config.repo_url }}/releases/download/v{{ git.tag | trim('v') }}/artifactory-cleanup_{{ git.tag | trim('v') }}_linux_ppc64le.tar.gz)
+* [`artifactory-cleanup_{{ git.tag | trim('v') }}_linux_s390x.tar.gz`]({{ config.repo_url }}/releases/download/v{{ git.tag | trim('v') }}/artifactory-cleanup_{{ git.tag | trim('v') }}_linux_s390x.tar.gz)
 * [`artifactory-cleanup_{{ git.tag | trim('v') }}_linux_x86_64.tar.gz`]({{ config.repo_url }}/releases/download/v{{ git.tag | trim('v') }}/artifactory-cleanup_{{ git.tag | trim('v') }}_linux_x86_64.tar.gz)
 * [`artifactory-cleanup_{{ git.tag | trim('v') }}_windows_i386.zip`]({{ config.repo_url }}/releases/download/v{{ git.tag | trim('v') }}/artifactory-cleanup_{{ git.tag | trim('v') }}_windows_i386.zip)
 * [`artifactory-cleanup_{{ git.tag | trim('v') }}_windows_x86_64.zip`]({{ config.repo_url }}/releases/download/v{{ git.tag | trim('v') }}/artifactory-cleanup_{{ git.tag | trim('v') }}_windows_x86_64.zip)
@@ -20,7 +23,7 @@ Choose the archive matching the destination platform:
 And extract Artifactory Cleanup:
 
 ```shell
-$ wget -qO- {{ config.repo_url }}releases/download/v{{ git.tag | trim('v') }}/artifactory-cleanup_{{ git.tag | trim('v') }}_linux_x86_64.tar.gz | tar -zxvf - artifactory-cleanup
+wget -qO- {{ config.repo_url }}releases/download/v{{ git.tag | trim('v') }}/artifactory-cleanup_{{ git.tag | trim('v') }}_linux_x86_64.tar.gz | tar -zxvf - artifactory-cleanup
 ```
 
 After getting the binary, it can be tested with [`./artifactory-cleanup --help`](../usage/cli.md) command and moved
@@ -35,19 +38,19 @@ Steps below are the recommended server configuration.
 Create user to run Artifactory Cleanup (ex. `artifactory-cleanup`)
 
 ```shell
-$ groupadd artifactory-cleanup
-$ useradd -s /bin/false -d /bin/null -g artifactory-cleanup artifactory-cleanup
+groupadd artifactory-cleanup
+useradd -s /bin/false -d /bin/null -g artifactory-cleanup artifactory-cleanup
 ```
 
 ### Create required directory structure
 
 ```shell
-$ mkdir -p /var/lib/artifactory-cleanup
-$ chown artifactory-cleanup:artifactory-cleanup /var/lib/artifactory-cleanup/
-$ chmod -R 750 /var/lib/artifactory-cleanup/
-$ mkdir /etc/artifactory-cleanup
-$ chown artifactory-cleanup:artifactory-cleanup /etc/artifactory-cleanup
-$ chmod 770 /etc/artifactory-cleanup
+mkdir -p /var/lib/artifactory-cleanup
+chown artifactory-cleanup:artifactory-cleanup /var/lib/artifactory-cleanup/
+chmod -R 750 /var/lib/artifactory-cleanup/
+mkdir /etc/artifactory-cleanup
+chown artifactory-cleanup:artifactory-cleanup /etc/artifactory-cleanup
+chmod 770 /etc/artifactory-cleanup
 ```
 
 ### Configuration
@@ -56,14 +59,14 @@ Create your first [configuration](../config/index.md) file in `/etc/artifactory-
 and type:
 
 ```shell
-$ chown artifactory-cleanup:artifactory-cleanup /etc/artifactory-cleanup/artifactory-cleanup.yml
-$ chmod 644 /etc/artifactory-cleanup/artifactory-cleanup.yml
+chown artifactory-cleanup:artifactory-cleanup /etc/artifactory-cleanup/artifactory-cleanup.yml
+chmod 644 /etc/artifactory-cleanup/artifactory-cleanup.yml
 ```
 
 ### Copy binary to global location
 
 ```shell
-$ cp artifactory-cleanup /usr/local/bin/artifactory-cleanup
+cp artifactory-cleanup /usr/local/bin/artifactory-cleanup
 ```
 
 ## Running Artifactory Cleanup
@@ -77,9 +80,9 @@ See how to create [Linux service](linux-service.md) to start Artifactory Cleanup
 ### 2. Running from terminal
 
 ```shell
-$ /usr/local/bin/artifactory-cleanup \
-    --config /etc/artifactory-cleanup/artifactory-cleanup.yml \
-    --dry-run
+/usr/local/bin/artifactory-cleanup \
+  --config /etc/artifactory-cleanup/artifactory-cleanup.yml \
+  --dry-run
 ```
 
 ## Updating to a new version
