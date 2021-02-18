@@ -39,7 +39,7 @@ func (j *Job) Run() {
 
 	if j.ID > 0 {
 		defer j.Log.Info().Msgf("Next run in %s (%s)",
-			durafmt.ParseShort(j.Cron.Entry(j.ID).Next.Sub(time.Now())).String(),
+			durafmt.ParseShort(time.Until(j.Cron.Entry(j.ID).Next)).String(),
 			j.Cron.Entry(j.ID).Next)
 	}
 

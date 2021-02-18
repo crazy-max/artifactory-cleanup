@@ -19,7 +19,6 @@ import (
 var (
 	ac      *app.AtfCleanup
 	cli     config.Cli
-	name    = "artifactory-cleanup"
 	version = "dev"
 	meta    = config.Meta{
 		ID:     "artifactory-cleanup",
@@ -44,7 +43,7 @@ func main() {
 		kong.Description(fmt.Sprintf("%s. More info: %s", meta.Desc, meta.URL)),
 		kong.UsageOnError(),
 		kong.Vars{
-			"version": fmt.Sprintf("%s", version),
+			"version": version,
 		},
 		kong.ConfigureHelp(kong.HelpOptions{
 			Compact: true,
