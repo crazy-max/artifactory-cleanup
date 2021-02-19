@@ -38,6 +38,6 @@ RUN apk --update --no-cache add \
   && rm -rf /tmp/* /var/cache/apk/*
 
 COPY --from=build /usr/local/bin/artifactory-cleanup /usr/local/bin/artifactory-cleanup
+RUN artifactory-cleanup --version
 
 ENTRYPOINT [ "artifactory-cleanup" ]
-RUN artifactory-cleanup --version
