@@ -3,9 +3,9 @@
 ## 1.1.0 (2021/02/18)
 
 * Refactor CI and dev workflow with buildx bake (#54)
-  * Add `image-local` target
-  * Single job for artifacts and image
-  * Add `armv5`, `ppc64le` and `s390x` artifacts
+    * Add `image-local` target
+    * Single job for artifacts and image
+    * Add `armv5`, `ppc64le` and `s390x` artifacts
 * Remove `linux/s390x` Docker platform support for now
 * Bump github.com/jfrog/jfrog-client-go from 0.16.0 to 0.19.1 (#36 #38 #39 #43 #49)
 * MkDocs Materials 6.2.8
