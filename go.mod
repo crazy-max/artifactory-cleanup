@@ -8,7 +8,7 @@ require (
 	github.com/crazy-max/gonfig v0.4.0
 	github.com/docker/go-units v0.4.0
 	github.com/go-playground/validator/v10 v10.5.0
-	github.com/go-resty/resty/v2 v2.4.0
+	github.com/go-resty/resty/v2 v2.6.0
 	github.com/hako/durafmt v0.0.0-20200710122514-c0fb7b4da026
 	github.com/jfrog/jfrog-client-go v0.21.2
 	github.com/pkg/errors v0.9.1
