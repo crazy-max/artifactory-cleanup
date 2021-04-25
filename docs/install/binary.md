@@ -6,6 +6,7 @@ Artifactory Cleanup binaries are available on [releases]({{ config.repo_url }}re
 
 Choose the archive matching the destination platform:
 
+* [`artifactory-cleanup_{{ git.tag | trim('v') }}_darwin_arm64.tar.gz`]({{ config.repo_url }}/releases/download/v{{ git.tag | trim('v') }}/artifactory-cleanup_{{ git.tag | trim('v') }}_darwin_arm64.tar.gz)
 * [`artifactory-cleanup_{{ git.tag | trim('v') }}_darwin_x86_64.tar.gz`]({{ config.repo_url }}/releases/download/v{{ git.tag | trim('v') }}/artifactory-cleanup_{{ git.tag | trim('v') }}_darwin_x86_64.tar.gz)
 * [`artifactory-cleanup_{{ git.tag | trim('v') }}_freebsd_i386.tar.gz`]({{ config.repo_url }}/releases/download/v{{ git.tag | trim('v') }}/artifactory-cleanup_{{ git.tag | trim('v') }}_freebsd_i386.tar.gz)
 * [`artifactory-cleanup_{{ git.tag | trim('v') }}_freebsd_x86_64.tar.gz`]({{ config.repo_url }}/releases/download/v{{ git.tag | trim('v') }}/artifactory-cleanup_{{ git.tag | trim('v') }}_freebsd_x86_64.tar.gz)
