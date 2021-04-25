@@ -32,12 +32,12 @@ Change the user, group, and other required startup values following your needs.
 Enable and start artifactory-cleanup at boot:
 
 ```shell
-$ sudo systemctl enable artifactory-cleanup
-$ sudo systemctl start artifactory-cleanup
+sudo systemctl enable artifactory-cleanup
+sudo systemctl start artifactory-cleanup
 ```
 
 To view logs:
 
 ```shell
-$ journalctl -fu artifactory-cleanup.service
+journalctl -fu artifactory-cleanup.service
 ```

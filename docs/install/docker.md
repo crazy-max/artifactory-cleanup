@@ -60,8 +60,8 @@ services:
 Edit this example with your preferences and run the following commands to bring up Artifactory Cleanup:
 
 ```shell
-$ docker-compose up -d
-$ docker-compose logs -f
+docker-compose up -d
+docker-compose logs -f
 ```
 
 Or use the following command:
@@ -85,8 +85,8 @@ $ docker run -d --name artifactory-cleanup \
 To upgrade your installation to the latest release:
 
 ```shell
-$ docker-compose pull
-$ docker-compose up -d
+docker-compose pull
+docker-compose up -d
 ```
 
 If you prefer to rely on the [`configuration file](../config/index.md#configuration-file) instead of

@@ -49,5 +49,5 @@ policies:
 That's it. Now you can launch Artifactory Cleanup with the following command:
 
 ```shell
-$ artifactory-cleanup --config ./artifactory-cleanup.yml --dry-run
+artifactory-cleanup --config ./artifactory-cleanup.yml --dry-run
 ```

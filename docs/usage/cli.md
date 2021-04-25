@@ -3,7 +3,7 @@
 ## Usage
 
 ```shell
-$ artifactory-cleanup [options]
+artifactory-cleanup [options]
 ```
 
 ## Options
