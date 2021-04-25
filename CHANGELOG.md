@@ -1,5 +1,17 @@
 # Changelog
 
+## 1.2.0 (2021/04/25)
+
+* MkDocs Materials 7.1.3
+* Bump github.com/jfrog/jfrog-client-go from 0.19.1 to 0.21.3 (#57 #58 #69 #70)
+* Bump github.com/go-resty/resty/v2 from 2.4.0 to 2.6.0 (#67)
+* Bump github.com/go-playground/validator/v10 from 10.4.1 to 10.5.0 (#66)
+* Bump github.com/rs/zerolog from 1.20.0 to 1.21.0 (#59)
+* Go 1.16 (#60)
+* Fix CodeQL workflow
+* Bump github.com/alecthomas/kong from 0.2.15 to 0.2.16 (#56)
+* Switch to goreleaser-xx (#55)
+
 ## 1.1.0 (2021/02/18)
 
 * Refactor CI and dev workflow with buildx bake (#54)
