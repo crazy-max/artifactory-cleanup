@@ -23,6 +23,7 @@ Flags:
       --log-json            Enable JSON logging output ($LOG_JSON).
       --log-caller          Add file:line of the caller to log output
                             ($LOG_CALLER).
+      --log-nocolor         Disables the colorized output ($LOG_NOCOLOR).
       --dry-run             If enabled files will not be removed ($DRY_RUN).
       --disable-schedule    Disable scheduling and execute policies right away
                             ($DISABLE_SCHEDULE).
@@ -38,5 +39,6 @@ Following environment variables can be used in place:
 | `LOG_LEVEL`        | `info`        | Log level output |
 | `LOG_JSON`         | `false`       | Enable JSON logging output |
 | `LOG_CALLER`       | `false`       | Enable to add `file:line` of the caller |
+| `LOG_NOCOLOR`      | `false`       | Disables the colorized output |
 | `DRY_RUN`          | `false`       | If enabled files will not be removed |
 | `DISABLE_SCHEDULE` | `false`       | Disable scheduling and execute policies right away |
