@@ -1,5 +1,20 @@
 # Changelog
 
+## 1.3.0 (2021/06/06)
+
+* MkDocs Materials 7.1.5
+* Allow to disable log color output
+* Add `NO_COLOR` support
+* Update build workflow
+* Fix artifacts download links
+* Set `cacheonly` output for validators
+* Bump github.com/rs/zerolog from 1.21.0 to 1.22.0 (#75)
+* Remove vendor workflow
+* Bump github.com/go-playground/validator/v10 from 10.5.0 to 10.6.1 (#72 #74)
+* Bump github.com/jfrog/jfrog-client-go from 0.21.3 to 0.23.1 (#73 #78)
+* Move to `docker/metadata-action`
+* Add `darwin/arm64` artifact
+
 ## 1.2.0 (2021/04/25)
 
 * MkDocs Materials 7.1.3
