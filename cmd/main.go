@@ -58,10 +58,10 @@ func main() {
 	}
 
 	// Handle os signals
-	channel := make(chan os.Signal)
-	signal.Notify(channel, os.Interrupt, syscall.SIGTERM)
+	ch := make(chan os.Signal, 1)
+	signal.Notify(ch, os.Interrupt, syscall.SIGTERM)
 	go func() {
-		sig := <-channel
+		sig := <-ch
 		ac.Close()
 		log.Warn().Msgf("Caught signal %v", sig)
 		os.Exit(0)
