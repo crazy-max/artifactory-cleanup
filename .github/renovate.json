@@ -1,0 +1,16 @@
+{
+  "extends": [
+    "config:base"
+  ],
+  "golang": {
+    "postUpdateOptions": [
+      "gomodTidy",
+      "gomodUpdateImportPaths"
+    ]
+  },
+  "labels": [
+    ":game_die: dependencies",
+    ":robot: bot"
+  ],
+  "prHourlyLimit": 0
+}
