@@ -1,7 +1,7 @@
 site_name: Artifactory Cleanup
 site_description: Cleanup artifacts on Jfrog Artifactory with advanced settings
 site_author: CrazyMax
-site_url: https://crazy-max.github.io/artifactory-cleanup/
+site_url: https://crazymax.dev/artifactory-cleanup/
 edit_uri: edit/master/docs/
 docs_dir: docs
 
@@ -19,6 +19,9 @@ extra:
       link: https://github.com/crazy-max/artifactory-cleanup
     - icon: fontawesome/brands/twitter
       link: https://twitter.com/crazyws
+  plausible:
+    server: plausible.re4per.com
+    domain: crazymax.dev/artifactory-cleanup
 
 theme:
   name: material
@@ -78,10 +81,6 @@ plugins:
       prebuild_index: python
       lang:
         - en
-
-google_analytics:
-  - UA-12516800-11
-  - auto
 
 nav:
   - Home: index.md
