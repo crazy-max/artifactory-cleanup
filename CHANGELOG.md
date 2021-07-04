@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.4.0 (2021/07/05)
+
+* Add `linux/riscv64` artifact
+* Alpine Linux 3.14
+* Bump github.com/jfrog/jfrog-client-go from 0.23.1 to 1.0.1
+* Update module github.com/rs/zerolog to v1.23.0 (#86)
+* Update golangci/golangci-lint Docker tag to v1.41 (#84 #87)
+* MkDocs Materials 7.1.9
+* Update module github.com/alecthomas/kong to v0.2.17 (#82)
+* Update github.com/hako/durafmt commit hash to 5c1018a (#81)
+
 ## 1.3.0 (2021/06/06)
 
 * MkDocs Materials 7.1.5
