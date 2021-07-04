@@ -21,7 +21,7 @@ func (j *Job) cleanupCommonRepo(config artifactory.RepoConfiguration) *CleanupRe
 	}
 
 	for _, include := range j.Policy.Common.Include {
-		aqlQuery, err := utils.CreateAqlBodyForSpecWithPattern(&utils.ArtifactoryCommonParams{
+		aqlQuery, err := utils.CreateAqlBodyForSpecWithPattern(&utils.CommonParams{
 			Pattern:     fmt.Sprintf("%s/%s", config.Key, strings.TrimLeft(include, "/")),
 			Exclusions:  j.Policy.Common.Exclude,
 			Offset:      0,
