@@ -39,6 +39,7 @@ jobs:
         uses: docker/bake-action@v1
         with:
           targets: validate
+          pull: true
 
   test:
     runs-on: ubuntu-latest
@@ -56,6 +57,7 @@ jobs:
         uses: docker/bake-action@v1
         with:
           targets: test
+          pull: true
       -
         name: Upload coverage
         uses: codecov/codecov-action@v2
@@ -83,6 +85,8 @@ jobs:
             ${{ env.GHCR_SLUG }}
           tags: |
             type=semver,pattern={{version}}
+            type=semver,pattern={{major}}.{{minor}}
+            type=semver,pattern={{major}}
             type=ref,event=pr
             type=edge
           labels: |
@@ -115,6 +119,7 @@ jobs:
         uses: docker/bake-action@v1
         with:
           targets: artifact-all
+          pull: true
       -
         name: Move artifacts
         run: |
@@ -123,17 +128,18 @@ jobs:
         name: Upload artifacts
         uses: actions/upload-artifact@v2
         with:
-          name: artifactory-cleanup
+          name: diun
           path: ./dist/*
           if-no-files-found: error
       -
-        name: Build image
+        name: Build
         uses: docker/bake-action@v1
         with:
           files: |
             ./docker-bake.hcl
             ${{ steps.meta.outputs.bake-file }}
           targets: image-all
+          pull: true
           push: ${{ github.event_name != 'pull_request' }}
       -
         name: GitHub Release

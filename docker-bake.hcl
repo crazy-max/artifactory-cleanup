@@ -1,6 +1,6 @@
 // Go version
 variable "GO_VERSION" {
-  default = "1.16"
+  default = "1.17"
 }
 
 target "go-version" {
@@ -90,7 +90,8 @@ target "artifact-all" {
     "linux/riscv64",
     "linux/s390x",
     "windows/386",
-    "windows/amd64"
+    "windows/amd64",
+    "windows/arm64"
   ]
 }
 
