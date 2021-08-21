@@ -21,6 +21,7 @@ Choose the archive matching the destination platform:
 * [`artifactory-cleanup_{{ git.tag | trim('v') }}_linux_s390x.tar.gz`]({{ config.repo_url }}/releases/download/v{{ git.tag | trim('v') }}/artifactory-cleanup_{{ git.tag | trim('v') }}_linux_s390x.tar.gz)
 * [`artifactory-cleanup_{{ git.tag | trim('v') }}_windows_386.zip`]({{ config.repo_url }}/releases/download/v{{ git.tag | trim('v') }}/artifactory-cleanup_{{ git.tag | trim('v') }}_windows_386.zip)
 * [`artifactory-cleanup_{{ git.tag | trim('v') }}_windows_amd64.zip`]({{ config.repo_url }}/releases/download/v{{ git.tag | trim('v') }}/artifactory-cleanup_{{ git.tag | trim('v') }}_windows_amd64.zip)
+* [`artifactory-cleanup_{{ git.tag | trim('v') }}_windows_arm64.zip`]({{ config.repo_url }}/releases/download/v{{ git.tag | trim('v') }}/artifactory-cleanup_{{ git.tag | trim('v') }}_windows_arm64.zip)
 
 And extract Artifactory Cleanup:
 
