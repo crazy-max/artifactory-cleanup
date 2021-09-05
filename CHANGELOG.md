@@ -14,7 +14,7 @@
 ## 1.3.0 (2021/06/06)
 
 * MkDocs Materials 7.1.5
-* Allow to disable log color output
+* Allow disabling log color output
 * Add `NO_COLOR` support
 * Update build workflow
 * Fix artifacts download links
@@ -70,7 +70,7 @@
 
 ## 0.3.0 (2020/09/24)
 
-* Allow to disable scheduling to execute policies right away
+* Allow disabling scheduling to execute policies right away
 * Update deps
 
 ## 0.2.0 (2020/09/23)
