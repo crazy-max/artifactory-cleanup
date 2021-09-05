@@ -1,5 +1,17 @@
 # Changelog
 
+## 1.5.0 (2021/09/05)
+
+* Go 1.17 (#98)
+  * Add `windows/arm64` artifact
+* Wrong remaining time displayed
+* MkDocs Materials 7.2.6 (#103)
+* Bump github.com/rs/zerolog from 1.23.0 to 1.24.0 (#102)
+* Bump github.com/crazy-max/gonfig from 0.4.0 to 0.5.0 (#99)
+* Bump github.com/jfrog/jfrog-client-go from 1.0.1 to 1.4.0 (#92 #97 #101)
+* Bump github.com/go-playground/validator/v10 from 10.6.1 to 10.9.0 (#93 #95)
+* Bump codecov/codecov-action from 1 to 2
+
 ## 1.4.0 (2021/07/05)
 
 * Add `linux/riscv64` artifact
