@@ -3,7 +3,7 @@
 ## 1.5.0 (2021/09/05)
 
 * Go 1.17 (#98)
-  * Add `windows/arm64` artifact
+* Add `windows/arm64` artifact
 * Wrong remaining time displayed
 * MkDocs Materials 7.2.6 (#103)
 * Bump github.com/rs/zerolog from 1.23.0 to 1.24.0 (#102)
