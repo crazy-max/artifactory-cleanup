@@ -10,7 +10,7 @@ require (
 	github.com/go-playground/validator/v10 v10.9.0
 	github.com/go-resty/resty/v2 v2.7.0
 	github.com/hako/durafmt v0.0.0-20210608085754-5c1018a4e16b
-	github.com/jfrog/jfrog-client-go v1.4.0
+	github.com/jfrog/jfrog-client-go v1.5.1
 	github.com/pkg/errors v0.9.1
 	github.com/robfig/cron/v3 v3.0.1
 	github.com/rs/zerolog v1.26.0
@@ -31,6 +31,7 @@ require (
 	github.com/go-git/go-git/v5 v5.4.2 // indirect
 	github.com/go-playground/locales v0.14.0 // indirect
 	github.com/go-playground/universal-translator v0.18.0 // indirect
+	github.com/golang-jwt/jwt/v4 v4.1.0 // indirect
 	github.com/golang/snappy v0.0.2 // indirect
 	github.com/gookit/color v1.4.2 // indirect
 	github.com/imdario/mergo v0.3.12 // indirect
