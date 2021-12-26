@@ -6,13 +6,13 @@ import (
 	"os/signal"
 	"runtime"
 	"strings"
-	"syscall"
 	_ "time/tzdata"
 
 	"github.com/alecthomas/kong"
 	"github.com/crazy-max/artifactory-cleanup/internal/app"
 	"github.com/crazy-max/artifactory-cleanup/internal/config"
 	"github.com/crazy-max/artifactory-cleanup/internal/logging"
+	"github.com/crazy-max/artifactory-cleanup/pkg/utl"
 	"github.com/rs/zerolog/log"
 )
 
@@ -59,7 +59,7 @@ func main() {
 
 	// Handle os signals
 	ch := make(chan os.Signal, 1)
-	signal.Notify(ch, os.Interrupt, syscall.SIGTERM)
+	signal.Notify(ch, os.Interrupt, utl.SIGTERM)
 	go func() {
 		sig := <-ch
 		ac.Close()
