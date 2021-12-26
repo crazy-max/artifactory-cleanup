@@ -1,7 +1,7 @@
 package utl
 
 import (
-	"io/ioutil"
+	"os"
 	"regexp"
 	"time"
 )
@@ -21,7 +21,7 @@ func GetSecret(plaintext, filename string) (string, error) {
 	if plaintext != "" {
 		return plaintext, nil
 	} else if filename != "" {
-		b, err := ioutil.ReadFile(filename)
+		b, err := os.ReadFile(filename)
 		if err != nil {
 			return "", err
 		}
