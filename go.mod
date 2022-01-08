@@ -10,7 +10,7 @@ require (
 	github.com/go-playground/validator/v10 v10.10.0
 	github.com/go-resty/resty/v2 v2.7.0
 	github.com/hako/durafmt v0.0.0-20210608085754-5c1018a4e16b
-	github.com/jfrog/jfrog-client-go v1.6.6
+	github.com/jfrog/jfrog-client-go v1.7.1
 	github.com/pkg/errors v0.9.1
 	github.com/robfig/cron/v3 v3.0.1
 	github.com/rs/zerolog v1.26.1
@@ -37,7 +37,7 @@ require (
 	github.com/gookit/color v1.4.2 // indirect
 	github.com/imdario/mergo v0.3.12 // indirect
 	github.com/jbenet/go-context v0.0.0-20150711004518-d14ea06fba99 // indirect
-	github.com/jfrog/build-info-go v0.1.5 // indirect
+	github.com/jfrog/build-info-go v0.1.6 // indirect
 	github.com/jfrog/gofrog v1.1.1 // indirect
 	github.com/kevinburke/ssh_config v0.0.0-20201106050909-4977a11b4351 // indirect
 	github.com/klauspost/compress v1.11.4 // indirect
