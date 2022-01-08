@@ -7,7 +7,7 @@ require (
 	github.com/alecthomas/kong v0.3.0
 	github.com/crazy-max/gonfig v0.5.0
 	github.com/docker/go-units v0.4.0
-	github.com/go-playground/validator/v10 v10.9.0
+	github.com/go-playground/validator/v10 v10.10.0
 	github.com/go-resty/resty/v2 v2.7.0
 	github.com/hako/durafmt v0.0.0-20210608085754-5c1018a4e16b
 	github.com/jfrog/jfrog-client-go v1.6.6
