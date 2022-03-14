@@ -4,7 +4,7 @@ go 1.17
 
 require (
 	github.com/Masterminds/semver/v3 v3.1.1
-	github.com/alecthomas/kong v0.3.0
+	github.com/alecthomas/kong v0.5.0
 	github.com/crazy-max/gonfig v0.5.0
 	github.com/docker/go-units v0.4.0
 	github.com/go-playground/validator/v10 v10.10.0
