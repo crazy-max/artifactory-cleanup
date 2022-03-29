@@ -26,6 +26,7 @@ policies:
     lastDownloaded: true
     docker:
       keepSemver: true
+      repoRetentionCount: 1
       exclude:
         - "latest"
   -

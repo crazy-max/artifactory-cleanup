@@ -14,6 +14,7 @@ policies:
     lastDownloaded: true
     docker:
       keepSemver: true
+      repoRetentionCount: 3
       exclude:
         - "latest"
   -
@@ -161,6 +162,7 @@ during the cleanup process.
         name: "mypolicy"
         docker:
           keepSemver: true
+          repoRetentionCount: 3
           exclude:
             - "latest"
     ```
@@ -168,8 +170,10 @@ during the cleanup process.
 !!! abstract "Environment variables"
     * `ATFCLNP_POLICIES_<KEY>_DOCKER_KEEPSEMVER`
     * `ATFCLNP_POLICIES_<KEY>_DOCKER_EXCLUDE`
+    * `ATFCLNP_POLICIES_<KEY>_DOCKER_REPORETENTIONCOUNT`
 
-| Name               | Default       | Description   |
-|--------------------|---------------|---------------|
-| `keepSemver`       |               | Do not remove tags matching a semver compliant pattern |
-| `exclude`          |               | List of tags matching an expression to exclude |
+| Name                 | Default       | Description   |
+|----------------------|---------------|---------------|
+| `keepSemver`         |               | Do not remove tags matching a semver compliant pattern |
+| `repoRetentionCount` |               | The number of images that should be kept in each docker repository regardless of `lastModified` and `lastDownloaded` |
+| `exclude`            |               | List of tags matching an expression to exclude |
