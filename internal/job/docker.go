@@ -47,7 +47,7 @@ func (j *Job) cleanupDockerRepo(config artifactory.RepoConfiguration) *CleanupRe
 		}
 
 		// Iterate over tags
-		for _, tag := range tags.Tags {
+		for index, tag := range tags.Tags {
 			tagLog := dockerRepoLog.With().Str("tag", tag).Logger()
 
 			// Image size
@@ -96,6 +96,11 @@ func (j *Job) cleanupDockerRepo(config artifactory.RepoConfiguration) *CleanupRe
 			}
 			if *j.Policy.LastDownloaded && currentDate.Sub(lastDownloaded) < *j.Policy.Retention {
 				tagDateLog.Debug().Msg("This tag is not old enough to be deleted. Skipping...")
+				continue
+			}
+
+			if *j.Policy.Docker.RepoRetentionCount > 0 && len(tags.Tags)-index <= *j.Policy.Docker.RepoRetentionCount {
+				tagDateLog.Debug().Msg("This image is within the specified retention count for this repository. Skipping...")
 				continue
 			}
 

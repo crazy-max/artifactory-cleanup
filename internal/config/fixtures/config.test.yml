@@ -10,6 +10,7 @@ policies:
     schedule: "*/30 * * * *"
     retention: 720h
     docker:
+      repoRetentionCount: 3
       exclude:
         - "latest"
   -

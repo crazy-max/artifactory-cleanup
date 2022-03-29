@@ -6,8 +6,9 @@ import (
 
 // PolicyDocker holds docker's policy configuration
 type PolicyDocker struct {
-	KeepSemver *bool    `yaml:"keepSemver,omitempty" json:"keepSemver,omitempty"`
-	Exclude    []string `yaml:"exclude,omitempty" json:"exclude,omitempty"`
+	KeepSemver         *bool    `yaml:"keepSemver,omitempty" json:"keepSemver,omitempty"`
+	RepoRetentionCount *int     `yaml:"repoRetentionCount,omitempty" json:"repoRetentionCount,omitempty" validate:"required"`
+	Exclude            []string `yaml:"exclude,omitempty" json:"exclude,omitempty"`
 }
 
 // GetDefaults gets the default values
