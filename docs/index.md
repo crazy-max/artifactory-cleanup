@@ -16,13 +16,11 @@
 
 ## What is Artifactory Cleanup?
 
-**Artifactory Cleanup** is a CLI application written in [Go](https://golang.org/) and delivered as a
-[single executable](https://github.com/crazy-max/artifactory-cleanup/releases/latest) (and a
-[Docker image](https://hub.docker.com/r/crazymax/artifactory-cleanup/)) to cleanup artifacts on
-[JFrog Artifactory](https://jfrog.com/artifactory/) with advanced settings.
-
-With Go, this can be done with an independent binary distribution across all platforms and architectures that Go supports.
-This support includes Linux, macOS, and Windows, on architectures like amd64, i386, ARM, PowerPC, and others.
+**Artifactory Cleanup** is a CLI application written in [Go](https://golang.org/)
+and delivered as a [binary](https://github.com/crazy-max/artifactory-cleanup/releases/latest)
+and [Docker image](https://hub.docker.com/r/crazymax/artifactory-cleanup/) to
+clean up artifacts on [JFrog Artifactory](https://jfrog.com/artifactory/) with
+advanced settings.
 
 ## License
 
