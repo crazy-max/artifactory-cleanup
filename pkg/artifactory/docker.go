@@ -95,7 +95,7 @@ func (c *Client) DockerTagLastModified(registry string, repo string, tag string)
 
 // DockerTagLastDownloaded returns the last downloaded time of a Docker tag manifest
 func (c *Client) DockerTagLastDownloaded(registry string, repo string, tag string) (time.Time, error) {
-	return c.LastDownloaded(registry, path.Join(repo, tag))
+	return c.LastDownloaded(registry, path.Join(repo, tag, "manifest.json"))
 }
 
 // DockerTagRemove removes a Docker tag on Artifactory
