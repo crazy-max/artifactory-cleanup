@@ -38,7 +38,7 @@ func TestLoadFile(t *testing.T) {
 				},
 				Artifactory: &Artifactory{
 					URL:     "https://artifactory.example.com",
-					ApiKey:  "01234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+					APIKey:  "01234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ",
 					Timeout: utl.NewDuration(10 * time.Second),
 				},
 				Policies: []Policy{
@@ -87,7 +87,6 @@ func TestLoadFile(t *testing.T) {
 	}
 	for _, tt := range cases {
 		t.Run(tt.name, func(t *testing.T) {
-
 			cfg, err := Load(tt.cli, Meta{})
 			if tt.wantErr {
 				require.Error(t, err)

@@ -9,8 +9,8 @@ import (
 // Artifactory holds Artifactory details
 type Artifactory struct {
 	URL        string         `yaml:"url,omitempty" json:"url,omitempty" validate:"required"`
-	ApiKey     string         `yaml:"apiKey,omitempty" json:"apiKey,omitempty" validate:"required"`
-	ApiKeyFile string         `yaml:"apiKeyFile,omitempty" json:"apiKeyFile,omitempty" validate:"omitempty,file"`
+	APIKey     string         `yaml:"apiKey,omitempty" json:"apiKey,omitempty" validate:"required"`
+	APIKeyFile string         `yaml:"apiKeyFile,omitempty" json:"apiKeyFile,omitempty" validate:"omitempty,file"`
 	Timeout    *time.Duration `yaml:"timeout,omitempty" json:"timeout,omitempty" validate:"required"`
 }
 

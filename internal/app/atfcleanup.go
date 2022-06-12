@@ -19,7 +19,7 @@ type AtfCleanup struct {
 
 // New creates a new Artifactory cleanup instance
 func New(cfg *config.Config) (*AtfCleanup, error) {
-	apiKey, err := utl.GetSecret(cfg.Artifactory.ApiKey, cfg.Artifactory.ApiKeyFile)
+	apiKey, err := utl.GetSecret(cfg.Artifactory.APIKey, cfg.Artifactory.APIKeyFile)
 	if err != nil {
 		log.Warn().Err(err).Msg("Cannot retrieve API key secret")
 	}
