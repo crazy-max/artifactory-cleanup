@@ -51,6 +51,14 @@ target "artifact-all" {
   ]
 }
 
+target "release" {
+  target = "release"
+  output = ["./release"]
+  contexts = {
+    artifacts = "./dist"
+  }
+}
+
 target "image" {
   inherits = ["_common", "docker-metadata-action"]
 }
