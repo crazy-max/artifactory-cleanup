@@ -2,14 +2,24 @@ variable "GO_VERSION" {
   default = "1.19"
 }
 
+variable "DESTDIR" {
+  default = "./bin"
+}
+
+# GITHUB_REF is the actual ref that triggers the workflow and used as version
+# when tag is pushed! https://docs.github.com/en/actions/learn-github-actions/environment-variables#default-environment-variables
+variable "GITHUB_REF" {
+  default = ""
+}
+
 target "_common" {
   args = {
     GO_VERSION = GO_VERSION
-    BUILDKIT_CONTEXT_KEEP_GIT_DIR = 1
+    GIT_REF = GITHUB_REF
   }
 }
 
-// Special target: https://github.com/docker/metadata-action#bake-definition
+# Special target: https://github.com/docker/metadata-action#bake-definition
 target "docker-metadata-action" {
   tags = ["artifactory-cleanup:local"]
 }
@@ -21,13 +31,13 @@ group "default" {
 target "binary" {
   inherits = ["_common"]
   target = "binary"
-  output = ["./bin"]
+  output = ["${DESTDIR}/build"]
 }
 
 target "artifact" {
   inherits = ["_common"]
   target = "artifact"
-  output = ["./dist"]
+  output = ["${DESTDIR}/artifact"]
 }
 
 target "artifact-all" {
@@ -50,6 +60,14 @@ target "artifact-all" {
     "windows/amd64",
     "windows/arm64"
   ]
+}
+
+target "release" {
+  target = "release"
+  output = ["${DESTDIR}/release"]
+  contexts = {
+    artifacts = "${DESTDIR}/artifact"
+  }
 }
 
 target "image" {
@@ -76,7 +94,7 @@ target "image-all" {
 target "test" {
   inherits = ["_common"]
   target = "test-coverage"
-  output = ["."]
+  output = ["${DESTDIR}/coverage"]
 }
 
 target "vendor" {
@@ -89,7 +107,7 @@ target "vendor" {
 target "docs" {
   dockerfile = "./hack/docs.Dockerfile"
   target = "release"
-  output = ["./site"]
+  output = ["${DESTDIR}/site"]
 }
 
 target "gomod-outdated" {
