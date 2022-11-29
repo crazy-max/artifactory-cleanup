@@ -47,7 +47,7 @@ func (j *Job) cleanupCommonRepo(config artifactory.RepoConfiguration) *CleanupRe
 	sublog.Info().Msgf("%d files found", len(files))
 
 	// Iterate over files
-	for _, file := range files {
+	for index, file := range files {
 		filelog := sublog.With().
 			Str("file", path.Join(file.Path, file.Name)).
 			Str("size", units.HumanSize(float64(file.Size))).
@@ -70,6 +70,11 @@ func (j *Job) cleanupCommonRepo(config artifactory.RepoConfiguration) *CleanupRe
 		}
 		if *j.Policy.LastDownloaded && currentDate.Sub(lastDownloaded) < *j.Policy.Retention {
 			filelog.Debug().Msg("This file is not old enough to be deleted. Skipping...")
+			continue
+		}
+
+		if *j.Policy.RetentionCount > 0 && len(files)-index <= *j.Policy.RetentionCount {
+			filelog.Debug().Msg("This image is within the specified retention count for this repository. Skipping...")
 			continue
 		}
 

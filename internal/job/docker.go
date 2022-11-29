@@ -99,7 +99,7 @@ func (j *Job) cleanupDockerRepo(config artifactory.RepoConfiguration) *CleanupRe
 				continue
 			}
 
-			if *j.Policy.Docker.RepoRetentionCount > 0 && len(tags.Tags)-index <= *j.Policy.Docker.RepoRetentionCount {
+			if *j.Policy.RetentionCount > 0 && len(tags.Tags)-index <= *j.Policy.RetentionCount {
 				tagDateLog.Debug().Msg("This image is within the specified retention count for this repository. Skipping...")
 				continue
 			}

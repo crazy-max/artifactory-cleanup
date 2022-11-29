@@ -9,8 +9,8 @@ policies:
       - docker-me-local
     schedule: "*/30 * * * *"
     retention: 720h
+    repoRetentionCount: 3
     docker:
-      repoRetentionCount: 3
       exclude:
         - "latest"
   -
@@ -21,6 +21,7 @@ policies:
       - generic-local
     schedule: "*/30 * * * * *"
     retention: 24h
+    repoRetentionCount: 3
     common:
       include:
         - "prod/*"

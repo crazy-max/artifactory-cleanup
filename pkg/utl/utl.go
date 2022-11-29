@@ -42,6 +42,11 @@ func NewTrue() *bool {
 	return &b
 }
 
+// NewInt returns a pointer to the int passed in
+func NewInt(i int) *int {
+	return &i
+}
+
 // NewDuration returns a duration pointer
 func NewDuration(duration time.Duration) *time.Duration {
 	return &duration
