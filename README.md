@@ -4,7 +4,7 @@
   <a href="https://crazymax.dev/artifactory-cleanup/"><img src="https://img.shields.io/badge/doc-mkdocs-02a6f2?style=flat-square&logo=read-the-docs" alt="Documentation"></a>
   <a href="https://github.com/crazy-max/artifactory-cleanup/releases/latest"><img src="https://img.shields.io/github/release/crazy-max/artifactory-cleanup.svg?style=flat-square" alt="GitHub release"></a>
   <a href="https://github.com/crazy-max/artifactory-cleanup/releases/latest"><img src="https://img.shields.io/github/downloads/crazy-max/artifactory-cleanup/total.svg?style=flat-square" alt="Total downloads"></a>
-  <a href="https://github.com/crazy-max/artifactory-cleanup/actions?workflow=build"><img src="https://img.shields.io/github/workflow/status/crazy-max/artifactory-cleanup/build?label=build&logo=github&style=flat-square" alt="Build Status"></a>
+  <a href="https://github.com/crazy-max/artifactory-cleanup/actions?workflow=build"><img src="https://img.shields.io/github/actions/workflow/status/crazy-max/artifactory-cleanup/build.yml?branch=master&label=build&logo=github&style=flat-square" alt="Build Status"></a>
   <a href="https://hub.docker.com/r/crazymax/artifactory-cleanup/"><img src="https://img.shields.io/docker/stars/crazymax/artifactory-cleanup.svg?style=flat-square&logo=docker" alt="Docker Stars"></a>
   <a href="https://hub.docker.com/r/crazymax/artifactory-cleanup/"><img src="https://img.shields.io/docker/pulls/crazymax/artifactory-cleanup.svg?style=flat-square&logo=docker" alt="Docker Pulls"></a>
   <br /><a href="https://goreportcard.com/report/github.com/crazy-max/artifactory-cleanup"><img src="https://goreportcard.com/badge/github.com/crazy-max/artifactory-cleanup?style=flat-square" alt="Go Report"></a>
