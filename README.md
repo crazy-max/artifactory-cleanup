@@ -21,7 +21,10 @@ and a [Docker image](https://hub.docker.com/r/crazymax/artifactory-cleanup/) to
 clean up artifacts on [JFrog Artifactory](https://jfrog.com/artifactory/) with
 advanced settings.
 
-💡 Want to be notified of new releases? Check out 🔔 [Diun (Docker Image Update Notifier)](https://github.com/crazy-max/diun) project!
+> **Note**
+> 
+> Want to be notified of new releases? Check out 🔔 [Diun (Docker Image Update Notifier)](https://github.com/crazy-max/diun)
+> project!
 
 ## Documentation
 
