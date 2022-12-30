@@ -1,5 +1,19 @@
 # Changelog
 
+## 1.7.0 (2022/12/30)
+
+* Go 1.19 (#195)
+* Alpine Linux 3.17 (#207)
+* Enhance workflow (#196 #197)
+* Bump github.com/crazy-max/gonfig from 0.5.0 to 0.6.0 (#178)
+* Bump github.com/stretchr/testify from 1.7.2 to 1.8.1 (#174 #198)
+* Bump github.com/rs/zerolog from 1.27.0 to 1.28.0 (#185)
+* Bump github.com/docker/go-units from 0.4.0 to 0.5.0 (#187)
+* Bump github.com/alecthomas/kong from 0.5.0 to 0.7.1 (#203)
+* Bump github.com/jfrog/jfrog-client-go from 1.13.1 to 1.24.5 (#206)
+* Bump github.com/go-playground/validator/v10 from 10.11.0 to 10.11.1 (#191)
+* Bump github.com/Masterminds/semver/v3 from 3.1.1 to 3.2.0 (#205)
+
 ## 1.6.0 (2022/06/12)
 
 * Use `manifest.json` for Docker tag last downloaded timestamp (#167)
