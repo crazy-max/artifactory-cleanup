@@ -1,3 +1,8 @@
+> **Warning**
+> 
+> This project is not maintained anymore and is abandoned. Feel free to fork
+> and make your own changes if needed.
+
 <p align="center"><a href="https://crazymax.dev/artifactory-cleanup/" target="_blank"><img height="128" src="https://raw.githubusercontent.com/crazy-max/artifactory-cleanup/master/.github/artifactory-cleanup.png"></a></p>
 
 <p align="center">
@@ -32,11 +37,10 @@ Documentation can be found on https://crazymax.dev/artifactory-cleanup/
 
 ## Contributing
 
-Want to contribute? Awesome! The most basic way to show your support is to star the project, or to raise issues. If
-you want to open a pull request, please read the [contributing guidelines](.github/CONTRIBUTING.md).
-
-You can also support this project by [**becoming a sponsor on GitHub**](https://github.com/sponsors/crazy-max) or by
-making a [PayPal donation](https://www.paypal.me/crazyws) to ensure this journey continues indefinitely!
+Want to contribute? Awesome! The most basic way to show your support is to star
+the project, or to raise issues. You can also support this project by [**becoming a sponsor on GitHub**](https://github.com/sponsors/crazy-max)
+or by making a [PayPal donation](https://www.paypal.me/crazyws) to ensure this
+journey continues indefinitely!
 
 Thanks again for your support, it is much appreciated! :pray:
 
