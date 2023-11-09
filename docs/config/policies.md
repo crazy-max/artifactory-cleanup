@@ -14,6 +14,7 @@ policies:
     lastDownloaded: true
     docker:
       keepSemver: true
+      repoRetentionCount: 3
       exclude:
         - "latest"
   -
@@ -87,6 +88,20 @@ Interval duration to look back before deleting an artifact.
     policies:
       - name: "mypolicy"
         retention: "24h"
+    ```
+
+!!! abstract "Environment variables"
+    * `ATFCLNP_POLICIES_<KEY>_RETENTIONCOUNT`
+
+### `retentionCount`
+
+The minimum number of artifacts to retain regardless of other policies.
+
+!!! example "Config file"
+    ```yaml
+    policies:
+      - name: "mypolicy"
+        retentionCount: 3
     ```
 
 !!! abstract "Environment variables"
@@ -169,7 +184,7 @@ during the cleanup process.
     * `ATFCLNP_POLICIES_<KEY>_DOCKER_KEEPSEMVER`
     * `ATFCLNP_POLICIES_<KEY>_DOCKER_EXCLUDE`
 
-| Name               | Default       | Description   |
-|--------------------|---------------|---------------|
-| `keepSemver`       |               | Do not remove tags matching a semver compliant pattern |
-| `exclude`          |               | List of tags matching an expression to exclude |
+| Name                 | Default       | Description   |
+|----------------------|---------------|---------------|
+| `keepSemver`         |               | Do not remove tags matching a semver compliant pattern |
+| `exclude`            |               | List of tags matching an expression to exclude |

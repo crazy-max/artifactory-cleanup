@@ -15,6 +15,7 @@ type Policy struct {
 	Repos          []string       `yaml:"repos,omitempty" json:"repos,omitempty" validate:"required"`
 	Schedule       string         `yaml:"schedule,omitempty" json:"schedule,omitempty" validate:"required"`
 	Retention      *time.Duration `yaml:"retention,omitempty" json:"retention,omitempty" validate:"required"`
+	RetentionCount *int           `yaml:"retentionCount,omitempty" json:"retentionCount,omitempty" validate:"required"`
 	LastModified   *bool          `yaml:"lastModified,omitempty" json:"lastModified,omitempty" validate:"required"`
 	LastDownloaded *bool          `yaml:"lastDownloaded,omitempty" json:"lastDownloaded,omitempty" validate:"required"`
 	Common         *PolicyCommon  `yaml:"common,omitempty" json:"common,omitempty"`

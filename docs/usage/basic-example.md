@@ -22,6 +22,7 @@ policies:
       - "docker-prod-local"
     schedule: "*/30 * * * *"
     retention: "2160h" # 90d
+    retentionCount: 1
     lastModified: true
     lastDownloaded: true
     docker:

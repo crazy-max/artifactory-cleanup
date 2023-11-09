@@ -49,6 +49,7 @@ func TestLoadFile(t *testing.T) {
 						},
 						Schedule:       "*/30 * * * *",
 						Retention:      utl.NewDuration(720 * time.Hour),
+						RetentionCount: utl.NewInt(3),
 						LastModified:   utl.NewTrue(),
 						LastDownloaded: utl.NewTrue(),
 						Common:         (&PolicyCommon{}).GetDefaults(),
@@ -68,6 +69,7 @@ func TestLoadFile(t *testing.T) {
 						},
 						Schedule:       "*/30 * * * * *",
 						Retention:      utl.NewDuration(24 * time.Hour),
+						RetentionCount: utl.NewInt(3),
 						LastModified:   utl.NewTrue(),
 						LastDownloaded: utl.NewTrue(),
 						Common: &PolicyCommon{
